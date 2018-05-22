@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonHandler(View view) {
         count=0;
+        TextView t= findViewById(R.id.textView);
+        t.setText("Welcome! Press start to \n guess a number from 0 to 100");
+        EditText et= findViewById(R.id.editText);
+        et.setText("");
         Toast.makeText(this, "Game Started", Toast.LENGTH_SHORT).show();
         Random r = new Random();
         num = r.nextInt(100);
