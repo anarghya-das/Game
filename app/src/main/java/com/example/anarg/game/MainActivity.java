@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkGuess(String s) {
         count++;
-        TextView t = (TextView) findViewById(R.id.textView);
+        TextView t = findViewById(R.id.textView);
         try {
             if (s.equals(Integer.toString(num))) {
                 t.setText("You won!");
-                Toast.makeText(this, "You took :" + count + " turns!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "You took: " + count + " turns!", Toast.LENGTH_SHORT).show();
             } else if (Integer.parseInt(s) < num) {
                 t.setText("Number to guess is higher! \n Number of Turns: "+count);
             } else if (Integer.parseInt(s) > num) {
