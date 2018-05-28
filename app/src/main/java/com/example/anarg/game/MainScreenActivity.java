@@ -12,18 +12,10 @@ public class MainScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-
-        startButtonHandler();
     }
 
-    public void startButtonHandler() {
-        Button b= (Button) findViewById(R.id.button3);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainScreenActivity.this,MainActivity.class));
-
-            }
-        });
+    public void startGameHandler(View view) {
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
     }
 }
