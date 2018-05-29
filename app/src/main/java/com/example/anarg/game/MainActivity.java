@@ -50,6 +50,7 @@ public class MainActivity extends SimpleActivity {
                 count++;
                 if (s.equals(Integer.toString(num))) {
                     $TV(R.id.textView).setText("You won!");
+                    $TV(R.id.button2).setEnabled(false);
                     Toast.makeText(this, "You took: " + count + " turns!", Toast.LENGTH_SHORT).show();
                 } else if (Integer.parseInt(s) < num) {
                     $TV(R.id.textView).setText("Number to guess is higher! \n Number of Turns: " + count);
