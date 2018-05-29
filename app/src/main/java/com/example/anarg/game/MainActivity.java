@@ -3,6 +3,7 @@ package com.example.anarg.game;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +34,7 @@ public class MainActivity extends SimpleActivity {
         TextView t= findViewById(R.id.textView);
         t.setText("Welcome! Press start to \n guess a number from 0 to 100");
         EditText et= findViewById(R.id.editText);
+        et.setRawInputType(InputType.TYPE_CLASS_NUMBER);
         et.setText("");
         Toast.makeText(this, "Game Started for limit: "+n, Toast.LENGTH_SHORT).show();
         Random r = new Random();
