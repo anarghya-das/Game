@@ -32,7 +32,7 @@ public class MainActivity extends SimpleActivity {
     public void startGame(int n) {
         count=0;
         TextView t= findViewById(R.id.textView);
-        t.setText("Welcome! Press start to \n guess a number from 0 to 100");
+        t.setText("Welcome! Press start to \n guess a number from 0 to "+n);
         EditText et= findViewById(R.id.editText);
         et.setRawInputType(InputType.TYPE_CLASS_NUMBER);
         et.setText("");
