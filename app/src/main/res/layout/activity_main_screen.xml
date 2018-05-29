@@ -8,6 +8,13 @@
     android:layout_height="match_parent"
     tools:context=".MainScreenActivity">
 
+    <ImageView
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:layout_marginBottom="20sp"
+        android:src="@drawable/question"
+        />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="285dp"

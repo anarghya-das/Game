@@ -22,10 +22,11 @@ public class MainActivity extends SimpleActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startGame();
         Toast.makeText(this, "Made by Anarghya", Toast.LENGTH_SHORT).show();
     }
 
-    public void buttonHandler(View view) {
+    public void startGame() {
         count=0;
         TextView t= findViewById(R.id.textView);
         t.setText("Welcome! Press start to \n guess a number from 0 to 100");
@@ -57,5 +58,9 @@ public class MainActivity extends SimpleActivity {
         EditText t = findViewById(R.id.editText);
         String s = t.getText().toString();
         checkGuess(s);
+    }
+
+    public void resetHandler(View view) {
+        startGame();
     }
 }
