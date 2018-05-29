@@ -65,7 +65,6 @@ public class MainActivity extends SimpleActivity {
     }
 
     public void resetHandler(View view) {
-        Intent i=new Intent(this,MainScreenActivity.class);
-        startActivity(i);
+        finish();
     }
 }

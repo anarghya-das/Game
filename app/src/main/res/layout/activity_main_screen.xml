@@ -50,8 +50,16 @@
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/game_options">
+        android:entries="@array/game_options"
+        android:layout_marginBottom="10sp">
         <!--android:onClick="startGameHandler">-->
     </Spinner>
+
+    <Button
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:onClick="endButtonHandler"/>
 
 </LinearLayout>

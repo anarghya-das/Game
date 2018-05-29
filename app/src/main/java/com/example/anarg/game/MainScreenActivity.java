@@ -19,8 +19,8 @@ public class MainScreenActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         Toast.makeText(this, "Made by Anarghya", Toast.LENGTH_SHORT).show();
-        Spinner spinner= (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.game_options));
+        Spinner spinner= findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.game_options));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -46,4 +46,7 @@ public class MainScreenActivity extends AppCompatActivity{
     }
 
 
+    public void endButtonHandler(View view) {
+        finish();
+    }
 }
