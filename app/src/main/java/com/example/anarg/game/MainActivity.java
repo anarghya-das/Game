@@ -42,17 +42,22 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void checkGuess(String s) {
-        count++;
         try {
-            if (s.equals(Integer.toString(num))) {
-                $TV(R.id.textView).setText("You won!");
-                Toast.makeText(this, "You took: " + count + " turns!", Toast.LENGTH_SHORT).show();
-            } else if (Integer.parseInt(s) < num) {
-                $TV(R.id.textView).setText("Number to guess is higher! \n Number of Turns: "+count);
-            } else if (Integer.parseInt(s) > num) {
-                $TV(R.id.textView).setText("Number to guess is lower! \n Number of Turns: "+count);
+            if(Integer.parseInt(s)<0){
+                toast("Enter a number greater than 0!");
             }
-        }catch(Exception e){
+            else {
+                count++;
+                if (s.equals(Integer.toString(num))) {
+                    $TV(R.id.textView).setText("You won!");
+                    Toast.makeText(this, "You took: " + count + " turns!", Toast.LENGTH_SHORT).show();
+                } else if (Integer.parseInt(s) < num) {
+                    $TV(R.id.textView).setText("Number to guess is higher! \n Number of Turns: " + count);
+                } else if (Integer.parseInt(s) > num) {
+                    $TV(R.id.textView).setText("Number to guess is lower! \n Number of Turns: " + count);
+                }
+            }
+        } catch(Exception e){
 //            Toast.makeText(this, "Enter a valid number", Toast.LENGTH_SHORT).show();
             toast("Enter a valid number");
         }
