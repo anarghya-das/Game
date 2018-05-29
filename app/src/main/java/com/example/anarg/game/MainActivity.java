@@ -1,5 +1,6 @@
 package com.example.anarg.game;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,19 +23,20 @@ public class MainActivity extends SimpleActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        startGame();
-        Toast.makeText(this, "Made by Anarghya", Toast.LENGTH_SHORT).show();
+        Intent i =getIntent();
+        int n=i.getIntExtra("Game type",50);
+        startGame(n);
     }
 
-    public void startGame() {
+    public void startGame(int n) {
         count=0;
         TextView t= findViewById(R.id.textView);
         t.setText("Welcome! Press start to \n guess a number from 0 to 100");
         EditText et= findViewById(R.id.editText);
         et.setText("");
-        Toast.makeText(this, "Game Started", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Game Started for limit: "+n, Toast.LENGTH_SHORT).show();
         Random r = new Random();
-        num = r.nextInt(100);
+        num = r.nextInt(n);
     }
 
     private void checkGuess(String s) {
@@ -61,6 +63,7 @@ public class MainActivity extends SimpleActivity {
     }
 
     public void resetHandler(View view) {
-        startGame();
+        Intent i=new Intent(this,MainScreenActivity.class);
+        startActivity(i);
     }
 }
