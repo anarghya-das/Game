@@ -49,6 +49,7 @@ public class MainActivity extends SimpleActivity {
         try {
             if(Integer.parseInt(s)<0){
                 toast("Enter a number greater than 0!");
+                $ET(R.id.editText).setText("");
             }
             else {
                 count++;
@@ -67,6 +68,7 @@ public class MainActivity extends SimpleActivity {
         } catch(Exception e){
 //            Toast.makeText(this, "Enter a valid number", Toast.LENGTH_SHORT).show();
             toast("Enter a valid number");
+            $ET(R.id.editText).setText("");
         }
     }
 
