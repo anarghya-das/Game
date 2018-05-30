@@ -1,6 +1,7 @@
 package com.example.anarg.game;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -19,6 +20,7 @@ public class MainActivity extends SimpleActivity {
 
     private int num;
     private int count;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class MainActivity extends SimpleActivity {
         Intent i =getIntent();
         int n=i.getIntExtra("Game type",50);
         startGame(n);
+        mp= MediaPlayer.create(this,R.raw.got);
+        mp.start();
     }
 
     public void startGame(int n) {
@@ -73,6 +77,11 @@ public class MainActivity extends SimpleActivity {
     }
 
     public void resetHandler(View view) {
+        mp.stop();
         finish();
+    }
+
+    public void stopMusic(View view) {
+        mp.setVolume(0,0);
     }
 }
