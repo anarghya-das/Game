@@ -11,13 +11,17 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainScreenActivity extends AppCompatActivity{
+import stanford.androidlib.SimpleActivity;
+
+public class MainScreenActivity extends SimpleActivity{
+    private String s;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        setTraceLifecycle(true);
         Toast.makeText(this, "Made by Anarghya", Toast.LENGTH_SHORT).show();
         Spinner spinner= findViewById(R.id.spinner);
         ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.game_options));
@@ -26,10 +30,7 @@ public class MainScreenActivity extends AppCompatActivity{
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position!=0) {
-                    String s = (String) parent.getItemAtPosition(position);
-                    startIntent(s);
-                }
+                    s = (String) parent.getItemAtPosition(position);
             }
 
             @Override
@@ -48,5 +49,14 @@ public class MainScreenActivity extends AppCompatActivity{
 
     public void endButtonHandler(View view) {
         finish();
+    }
+
+    public void startGameHandler(View view) {
+        if(s.length()!=0&&s.equals("Select a game")!=true) {
+            startIntent(s);
+        }
+        else{
+            toast("Select a proper Game Type!");
+        }
     }
 }

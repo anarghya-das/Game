@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:gravity="center|top"
@@ -32,28 +37,29 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start a game with the followiing"
+        android:text="Select game type then press Start"
         android:layout_marginBottom="20sp"/>
 
-    <!--<Button-->
-        <!--android:id="@+id/button3"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/start_button"-->
-        <!--android:onClick="startGameHandler"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="0.5"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/textView3" />-->
-    <Spinner
-        android:id="@+id/spinner"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/game_options"
-        android:layout_marginBottom="10sp">
-        <!--android:onClick="startGameHandler">-->
-    </Spinner>
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/game_options"
+            android:layout_marginBottom="10sp">
+            <!--android:onClick="startGameHandler">-->
+        </Spinner>
+        <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button"
+        android:onClick="startGameHandler" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/end"
@@ -63,3 +69,4 @@
         android:onClick="endButtonHandler"/>
 
 </LinearLayout>
+</ScrollView>
