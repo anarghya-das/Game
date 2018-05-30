@@ -53,9 +53,11 @@ public class MainActivity extends SimpleActivity {
                     $TV(R.id.button2).setEnabled(false);
                     Toast.makeText(this, "You took: " + count + " turns!", Toast.LENGTH_SHORT).show();
                 } else if (Integer.parseInt(s) < num) {
-                    $TV(R.id.textView).setText("Number to guess is higher! \n Number of Turns: " + count);
+                    $TV(R.id.textView).setText("Number to guess is higher! \n Number of Turns: " + count+"\n Last Number entered: "+s);
+                    $ET(R.id.editText).setText("");
                 } else if (Integer.parseInt(s) > num) {
-                    $TV(R.id.textView).setText("Number to guess is lower! \n Number of Turns: " + count);
+                    $TV(R.id.textView).setText("Number to guess is lower! \n Number of Turns: " + count+"\n Last Number entered: "+s);
+                    $ET(R.id.editText).setText("");
                 }
             }
         } catch(Exception e){
